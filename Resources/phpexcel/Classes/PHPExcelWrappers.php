@@ -22,14 +22,14 @@ function excel_Upvert($excelFile){
 	$objPHPExcel = PHPExcel_IOFactory::createReader('Excel5');
 
 	// If you only need to access data in your worksheets, and don't need access to the cell formatting, then you can disable reading the formatting information from the workbook:
-	$objPHPExcel->setReadDataOnly(True);
+	//$objPHPExcel->setReadDataOnly(True);
 
 	// can also limit load to specific worksheets to save memory if necessary
 	//$objPHPExcel->setLoadSheetsOnly("Sheet1");
 
 
 	// load data from original excel file
-	//$objPHPExcel = $objPHPExcel->load($excelFile); 
+	$objPHPExcel = $objPHPExcel->load($excelFile); 
 
 	// write the data out to an Excel2007 object
 	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
